@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{43330576-568B-4E7A-854E-AFF17E2C6D72}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CAS_CATEGORİE_ANALYZ_SYSTEM</RootNamespace>
+    <AssemblyName>CAS CATEGORİE ANALYZ SYSTEM</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllFolderAndDocsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllFolderAndDocsPage.Designer.cs">
+      <DependentUpon>AllFolderAndDocsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtensionCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtensionCard.Designer.cs">
+      <DependentUpon>ExtensionCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtensionsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtensionsPage.Designer.cs">
+      <DependentUpon>ExtensionsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="filesCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="filesCard.Designer.cs">
+      <DependentUpon>filesCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FilesPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilesPage.Designer.cs">
+      <DependentUpon>FilesPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="folderCard.Designer.cs">
+      <DependentUpon>folderCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBox.Designer.cs">
+      <DependentUpon>MessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpacityEffectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpacityEffectForm.Designer.cs">
+      <DependentUpon>OpacityEffectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="subfoldersCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subfoldersCard.Designer.cs">
+      <DependentUpon>subfoldersCard.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AllFolderAndDocsPage.resx">
+      <DependentUpon>AllFolderAndDocsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtensionCard.resx">
+      <DependentUpon>ExtensionCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtensionsPage.resx">
+      <DependentUpon>ExtensionsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="filesCard.resx">
+      <DependentUpon>filesCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilesPage.resx">
+      <DependentUpon>FilesPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderCard.resx">
+      <DependentUpon>folderCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBox.resx">
+      <DependentUpon>MessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpacityEffectForm.resx">
+      <DependentUpon>OpacityEffectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="subfoldersCard.resx">
+      <DependentUpon>subfoldersCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database1_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 ve x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
