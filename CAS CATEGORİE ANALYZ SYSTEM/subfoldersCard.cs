@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -42,6 +43,21 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
         private void klasördeGösterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(folderDisk+"\\"+folderName);
+            SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + "'" + Application.StartupPath + "\\Database1.mdf'" + ";Integrated Security=True");
+
+            string query = "INSERT INTO [Histories] (ProcessName,ProcessTime,ProcessPath,ProcessExtension,ProcessStatus) VALUES (@name,@time,@path,@extension,@status)";
+            using (SqlCommand command = new SqlCommand(query, sqlConnection))
+            {
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@name", folderName);
+                command.Parameters.AddWithValue("@time", DateTime.Now);
+                command.Parameters.AddWithValue("@path", folderDisk);
+                command.Parameters.AddWithValue("@extension", "folder");
+                command.Parameters.AddWithValue("@status", "Klasör Gösterildi.");
+                sqlConnection.Open();
+                command.ExecuteNonQuery();
+                sqlConnection.Close();
+            }
         }
 
         private void şimdiAçToolStripMenuItem_Click(object sender, EventArgs e)
@@ -230,6 +246,49 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
                         Console.WriteLine(ex.Message);
                     }
                 }
+            }
+            SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + "'" + Application.StartupPath + "\\Database1.mdf'" + ";Integrated Security=True");
+            string query = "INSERT INTO [Histories] (ProcessName,ProcessTime,ProcessPath,ProcessExtension,ProcessStatus) VALUES (@name,@time,@path,@extension,@status)";
+            using (SqlCommand command = new SqlCommand(query, sqlConnection))
+            {
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@name", folderName);
+                command.Parameters.AddWithValue("@time", DateTime.Now);
+                command.Parameters.AddWithValue("@path", folderDisk);
+                command.Parameters.AddWithValue("@extension", "folder");
+                command.Parameters.AddWithValue("@status", "Klasör CAS ile açıldı.");
+                sqlConnection.Open();
+                command.ExecuteNonQuery();
+                sqlConnection.Close();
+            }
+
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpacityEffectForm opacity = new OpacityEffectForm();
+            opacity.Show();
+            WarningMessageCard warning = new WarningMessageCard();
+            warning.header = "Bu Klasör silinecek";
+            warning.description = "Bu klasör ve içerisindeki tüm dosyalar ve alt klasörler silinecek, bu işlem geri alınamaz.";
+            warning.mode = "folder";
+            warning.opacity = opacity;
+            warning.subFoldersCard = this;
+            warning.folderPath = folderDisk + "\\" + folderName;
+            warning.ShowDialog();
+            SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + "'" + Application.StartupPath + "\\Database1.mdf'" + ";Integrated Security=True");
+            string query = "INSERT INTO [Histories] (ProcessName,ProcessTime,ProcessPath,ProcessExtension,ProcessStatus) VALUES (@name,@time,@path,@extension,@status)";
+            using (SqlCommand command = new SqlCommand(query, sqlConnection))
+            {
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@name", folderName);
+                command.Parameters.AddWithValue("@time", DateTime.Now);
+                command.Parameters.AddWithValue("@path", folderDisk);
+                command.Parameters.AddWithValue("@extension", "folder");
+                command.Parameters.AddWithValue("@status", "Klasör CAS ile silindi.");
+                sqlConnection.Open();
+                command.ExecuteNonQuery();
+                sqlConnection.Close();
             }
         }
     }

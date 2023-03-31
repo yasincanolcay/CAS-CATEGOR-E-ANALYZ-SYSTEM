@@ -106,6 +106,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HistoryCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryCard.Designer.cs">
+      <DependentUpon>HistoryCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryPage.Designer.cs">
+      <DependentUpon>HistoryPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="MessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +137,12 @@
     </Compile>
     <Compile Include="subfoldersCard.Designer.cs">
       <DependentUpon>subfoldersCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WarningMessageCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarningMessageCard.Designer.cs">
+      <DependentUpon>WarningMessageCard.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AllFolderAndDocsPage.resx">
       <DependentUpon>AllFolderAndDocsPage.cs</DependentUpon>
@@ -147,6 +165,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HistoryCard.resx">
+      <DependentUpon>HistoryCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryPage.resx">
+      <DependentUpon>HistoryPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MessageBox.resx">
       <DependentUpon>MessageBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +188,9 @@
     </Compile>
     <EmbeddedResource Include="subfoldersCard.resx">
       <DependentUpon>subfoldersCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarningMessageCard.resx">
+      <DependentUpon>WarningMessageCard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

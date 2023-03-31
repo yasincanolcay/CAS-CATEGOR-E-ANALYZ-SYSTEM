@@ -25,6 +25,7 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
         List<AllFolderAndDocsPage> folderPageList = new List<AllFolderAndDocsPage>();
         List<FilesPage> filesPageList = new List<FilesPage>();
         List<ExtensionsPage> extensionsPageList = new List<ExtensionsPage>();
+        List<HistoryPage> historyPageList = new List<HistoryPage>();
         public CAS()
         {
             InitializeComponent();
@@ -61,6 +62,17 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
                 extensionsPageList[i].Dispose();
                 GC.SuppressFinalize(extensionsPageList[i]);
             }
+            for (int i = 0; i < historyPageList.Count; i++)
+            {
+                historyPageList[i].Close();
+                historyPageList[i].Dispose();
+                GC.SuppressFinalize(historyPageList[i]);
+            }
+            extensionsPageList.Clear();
+            filesPageList.Clear();
+            homePageList.Clear();
+            folderPageList.Clear();
+            historyPageList.Clear();
             AllFolderAndDocsPage homePage = new AllFolderAndDocsPage();
             pageVewer.Controls.Clear();
             homePage.Dock = DockStyle.Fill;
@@ -96,6 +108,17 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
                 extensionsPageList[i].Dispose();
                 GC.SuppressFinalize(extensionsPageList[i]);
             }
+            for (int i = 0; i < historyPageList.Count; i++)
+            {
+                historyPageList[i].Close();
+                historyPageList[i].Dispose();
+                GC.SuppressFinalize(historyPageList[i]);
+            }
+            extensionsPageList.Clear();
+            filesPageList.Clear();
+            homePageList.Clear();
+            folderPageList.Clear();
+            historyPageList.Clear();
             AllFolderAndDocsPage FoldersPage = new AllFolderAndDocsPage();
             pageVewer.Controls.Clear();
             FoldersPage.Dock = DockStyle.Fill;
@@ -135,6 +158,17 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
                 extensionsPageList[i].Dispose();
                 GC.SuppressFinalize(extensionsPageList[i]);
             }
+            for (int i = 0; i < historyPageList.Count; i++)
+            {
+                historyPageList[i].Close();
+                historyPageList[i].Dispose();
+                GC.SuppressFinalize(historyPageList[i]);
+            }
+            extensionsPageList.Clear();
+            filesPageList.Clear();
+            homePageList.Clear();
+            folderPageList.Clear();
+            historyPageList.Clear();
             FilesPage filesPage = new FilesPage();
             pageVewer.Controls.Clear();
             filesPage.Dock = DockStyle.Fill;
@@ -171,6 +205,17 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
                 folderPageList[i].Dispose();
                 GC.SuppressFinalize(folderPageList[i]);
             }
+            for (int i = 0; i < historyPageList.Count; i++)
+            {
+                historyPageList[i].Close();
+                historyPageList[i].Dispose();
+                GC.SuppressFinalize(historyPageList[i]);
+            }
+            extensionsPageList.Clear();
+            filesPageList.Clear();
+            homePageList.Clear();
+            folderPageList.Clear();
+            historyPageList.Clear();
             pageVewer.Controls.Clear();
             ExtensionsPage exPage = new ExtensionsPage();
             exPage.Dock = DockStyle.Fill;
@@ -178,6 +223,52 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             pageVewer.Controls.Add(exPage);
             exPage.Show();
             extensionsPageList.Add(exPage);
+        }
+        private void loadHistoryPage()
+        {
+            for (int i = 0; i < extensionsPageList.Count; i++)
+            {
+                extensionsPageList[i].Close();
+                extensionsPageList[i].Dispose();
+                GC.SuppressFinalize(extensionsPageList[i]);
+            }
+            for (int i = 0; i < filesPageList.Count; i++)
+            {
+                filesPageList[i].Close();
+                filesPageList[i].Dispose();
+                GC.SuppressFinalize(filesPageList[i]);
+            }
+            for (int i = 0; i < homePageList.Count; i++)
+            {
+                homePageList[i].Close();
+                homePageList[i].Dispose();
+                GC.SuppressFinalize(homePageList[i]);
+            }
+            for (int i = 0; i < folderPageList.Count; i++)
+            {
+                folderPageList[i].Close();
+                folderPageList[i].Dispose();
+                GC.SuppressFinalize(folderPageList[i]);
+            }
+            for (int i = 0; i < historyPageList.Count; i++)
+            {
+                historyPageList[i].Close();
+                historyPageList[i].Dispose();
+                GC.SuppressFinalize(historyPageList[i]);
+            }
+            extensionsPageList.Clear();
+            filesPageList.Clear();
+            homePageList.Clear();
+            folderPageList.Clear();
+            historyPageList.Clear();
+            pageVewer.Controls.Clear();
+            // it will go to history page
+            HistoryPage historyPage = new HistoryPage();
+            historyPage.Dock = DockStyle.Fill;
+            historyPage.TopLevel = false;
+            pageVewer.Controls.Add(historyPage);
+            historyPage.Show();
+            historyPageList.Add(historyPage);
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -191,6 +282,42 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
                     sound.Dispose();
                     GC.SuppressFinalize(sound);
                 }
+                for (int i = 0; i < extensionsPageList.Count; i++)
+                {
+                    extensionsPageList[i].Close();
+                    extensionsPageList[i].Dispose();
+                    GC.SuppressFinalize(extensionsPageList[i]);
+                }
+                for (int i = 0; i < filesPageList.Count; i++)
+                {
+                    filesPageList[i].Close();
+                    filesPageList[i].Dispose();
+                    GC.SuppressFinalize(filesPageList[i]);
+                }
+                for (int i = 0; i < homePageList.Count; i++)
+                {
+                    homePageList[i].Close();
+                    homePageList[i].Dispose();
+                    GC.SuppressFinalize(homePageList[i]);
+                }
+                for (int i = 0; i < folderPageList.Count; i++)
+                {
+                    folderPageList[i].Close();
+                    folderPageList[i].Dispose();
+                    GC.SuppressFinalize(folderPageList[i]);
+                }
+                for (int i = 0; i < historyPageList.Count; i++)
+                {
+                    historyPageList[i].Close();
+                    historyPageList[i].Dispose();
+                    GC.SuppressFinalize(historyPageList[i]);
+                }
+                extensionsPageList.Clear();
+                filesPageList.Clear();
+                homePageList.Clear();
+                folderPageList.Clear();
+                historyPageList.Clear();
+                pageVewer.Controls.Clear();
                 Application.Exit();
             }
             catch { }
@@ -208,6 +335,8 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             docsBtn.BackColor = Color.FromArgb(30, 95, 130);
             imagesBtn.BackColor = Color.FromArgb(30, 95, 130);
             videosBtn.BackColor = Color.FromArgb(30, 95, 130);
+            extensionsBtn.BackColor = Color.FromArgb(30, 95, 130);
+            historyBtn.BackColor = Color.FromArgb(30, 95, 130);
         }
 
         private void formDragBar_MouseDown(object sender, MouseEventArgs e)
@@ -261,6 +390,7 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             imagesBtn.BackColor = Color.FromArgb(30, 95, 130);
             extensionsBtn.BackColor = Color.FromArgb(30, 95, 130);
             videosBtn.BackColor = Color.FromArgb(30, 95, 130);
+            historyBtn.BackColor = Color.FromArgb(30, 95, 130);
         }
 
         private void docsBtn_Click(object sender, EventArgs e)
@@ -276,6 +406,7 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             videosBtn.BackColor = Color.FromArgb(30, 95, 130);
             extensionsBtn.BackColor = Color.FromArgb(30, 95, 130);
             docsBtn.BackColor = Color.FromArgb(0, 80, 120);
+            historyBtn.BackColor = Color.FromArgb(30, 95, 130);
         }
 
         private void imagesBtn_Click(object sender, EventArgs e)
@@ -290,6 +421,7 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             videosBtn.BackColor = Color.FromArgb(30, 95, 130);
             extensionsBtn.BackColor = Color.FromArgb(30, 95, 130);
             imagesBtn.BackColor = Color.FromArgb(0, 80, 120);
+            historyBtn.BackColor = Color.FromArgb(30, 95, 130);
             loadFilesPage(true,false);
         }
 
@@ -305,6 +437,7 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             docsBtn.BackColor = Color.FromArgb(30, 95, 130);
             imagesBtn.BackColor = Color.FromArgb(30, 95, 130);
             extensionsBtn.BackColor = Color.FromArgb(30, 95, 130);
+            historyBtn.BackColor = Color.FromArgb(30, 95, 130);
             loadFilesPage(false, true);
         }
 
@@ -320,7 +453,26 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             folderBtn.BackColor = Color.FromArgb(30, 95, 130);
             docsBtn.BackColor = Color.FromArgb(30, 95, 130);
             imagesBtn.BackColor = Color.FromArgb(30, 95, 130);
+            historyBtn.BackColor = Color.FromArgb(30, 95, 130);
             loadextensionPage();
+        }
+
+        private void historyBtn_Click(object sender, EventArgs e)
+        {
+            SoundPlayer sound = new SoundPlayer(@"sounds\click.wav");
+            historyBtn.BackColor = Color.FromArgb(0, 80, 120);
+            videosBtn.BackColor = Color.FromArgb(30, 95, 130);
+            allBtn.BackColor = Color.FromArgb(30, 95, 130);
+            folderBtn.BackColor = Color.FromArgb(30, 95, 130);
+            docsBtn.BackColor = Color.FromArgb(30, 95, 130);
+            imagesBtn.BackColor = Color.FromArgb(30, 95, 130);
+            extensionsBtn.BackColor = Color.FromArgb(30, 95, 130);
+            loadHistoryPage();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            // it will go to Lists page
         }
     }
 }

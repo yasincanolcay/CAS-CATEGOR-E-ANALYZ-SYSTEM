@@ -36,12 +36,15 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.pageViewer = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // topPanel
             // 
+            this.topPanel.Controls.Add(this.pictureBox2);
             this.topPanel.Controls.Add(this.infoLbl);
             this.topPanel.Controls.Add(this.totalSizelbl);
             this.topPanel.Controls.Add(this.pictureBox1);
@@ -79,7 +82,7 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(590, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(781, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 20);
             this.pictureBox1.TabIndex = 5;
@@ -91,7 +94,7 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             | System.Windows.Forms.AnchorStyles.Right)));
             this.searchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(95)))), ((int)(((byte)(130)))));
             this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.searchBox.Location = new System.Drawing.Point(612, 4);
+            this.searchBox.Location = new System.Drawing.Point(557, 4);
             this.searchBox.Multiline = true;
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(221, 16);
@@ -112,6 +115,18 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             this.pageViewer.Size = new System.Drawing.Size(839, 379);
             this.pageViewer.TabIndex = 1;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(807, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
             // FilesPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,6 +143,7 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -140,5 +156,6 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Label totalSizelbl;
         private System.Windows.Forms.Label infoLbl;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

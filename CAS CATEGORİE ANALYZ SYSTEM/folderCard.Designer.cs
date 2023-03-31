@@ -80,13 +80,13 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             this.silToolStripMenuItem});
             this.moreMenu1.Name = "moreMenu";
             this.moreMenu1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.moreMenu1.Size = new System.Drawing.Size(131, 70);
+            this.moreMenu1.Size = new System.Drawing.Size(181, 92);
             // 
             // klasördeGösterToolStripMenuItem
             // 
             this.klasördeGösterToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.klasördeGösterToolStripMenuItem.Name = "klasördeGösterToolStripMenuItem";
-            this.klasördeGösterToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.klasördeGösterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.klasördeGösterToolStripMenuItem.Text = "Klasöre Git";
             this.klasördeGösterToolStripMenuItem.Click += new System.EventHandler(this.klasördeGösterToolStripMenuItem_Click);
             // 
@@ -94,7 +94,7 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             // 
             this.şimdiAçToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.şimdiAçToolStripMenuItem.Name = "şimdiAçToolStripMenuItem";
-            this.şimdiAçToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.şimdiAçToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.şimdiAçToolStripMenuItem.Text = "Şimdi Aç";
             this.şimdiAçToolStripMenuItem.Click += new System.EventHandler(this.şimdiAçToolStripMenuItem_Click);
             // 
@@ -102,8 +102,9 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             // 
             this.silToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // folderDisklbl
             // 

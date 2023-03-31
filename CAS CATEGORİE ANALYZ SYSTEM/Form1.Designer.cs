@@ -32,6 +32,9 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CAS));
             this.pageVewer = new System.Windows.Forms.Panel();
             this.appBar = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.historyBtn = new System.Windows.Forms.Button();
             this.extensionsBtn = new System.Windows.Forms.Button();
             this.videosBtn = new System.Windows.Forms.Button();
@@ -45,13 +48,10 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             this.minimizeButton = new System.Windows.Forms.Button();
             this.maximizeButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.appBar.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.formDragBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pageVewer
@@ -81,6 +81,41 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             this.appBar.Size = new System.Drawing.Size(908, 42);
             this.appBar.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(856, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(52, 42);
+            this.panel1.TabIndex = 8;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(12, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(30, 30);
+            this.button2.TabIndex = 0;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(671, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 25);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Listeler";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // historyBtn
             // 
             this.historyBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -94,6 +129,7 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             this.historyBtn.TabIndex = 6;
             this.historyBtn.Text = "Geçmiş";
             this.historyBtn.UseVisualStyleBackColor = true;
+            this.historyBtn.Click += new System.EventHandler(this.historyBtn_Click);
             // 
             // extensionsBtn
             // 
@@ -264,40 +300,6 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(671, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 25);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Listeler";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(856, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(52, 42);
-            this.panel1.TabIndex = 8;
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(12, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 30);
-            this.button2.TabIndex = 0;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // CAS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,10 +317,10 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
             this.Text = "CAS";
             this.Load += new System.EventHandler(this.CAS_Load);
             this.appBar.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.formDragBar.ResumeLayout(false);
             this.formDragBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

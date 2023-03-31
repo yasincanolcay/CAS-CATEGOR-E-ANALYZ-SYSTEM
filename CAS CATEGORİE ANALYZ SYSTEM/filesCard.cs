@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
 {
     public partial class filesCard : Form
     {
+
+
         public TableLayoutPanel viewerPanel = new TableLayoutPanel();
         public Panel viewPAnel = new Panel();
         public string fileName = "";
@@ -167,11 +170,69 @@ namespace CAS_CATEGORİE_ANALYZ_SYSTEM
         private void klasördeGösterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(filePath + "\\");
+            SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + "'" + Application.StartupPath + "\\Database1.mdf'" + ";Integrated Security=True");
+
+            string query = "INSERT INTO [Histories] (ProcessName,ProcessTime,ProcessPath,ProcessExtension,ProcessStatus) VALUES (@name,@time,@path,@extension,@status)";
+            using (SqlCommand command = new SqlCommand(query, sqlConnection))
+            {
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@name", fileName);
+                command.Parameters.AddWithValue("@time", DateTime.Now);
+                command.Parameters.AddWithValue("@path", filePath);
+                command.Parameters.AddWithValue("@extension", fileExt);
+                command.Parameters.AddWithValue("@status", "Dosya Klasörde Gösterildi.");
+                sqlConnection.Open();
+                command.ExecuteNonQuery();
+                sqlConnection.Close();
+            }
         }
 
         private void şimdiAçToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(filePath + "\\"+fileName);
+            SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + "'" + Application.StartupPath + "\\Database1.mdf'" + ";Integrated Security=True");
+
+            string query = "INSERT INTO [Histories] (ProcessName,ProcessTime,ProcessPath,ProcessExtension,ProcessStatus) VALUES (@name,@time,@path,@extension,@status)";
+            using (SqlCommand command = new SqlCommand(query, sqlConnection))
+            {
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@name", fileName);
+                command.Parameters.AddWithValue("@time", DateTime.Now);
+                command.Parameters.AddWithValue("@path", filePath);
+                command.Parameters.AddWithValue("@extension", fileExt);
+                command.Parameters.AddWithValue("@status", "Dosya CAS İle Açıldı.");
+                sqlConnection.Open();
+                command.ExecuteNonQuery();
+                sqlConnection.Close();
+            }
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpacityEffectForm opacity = new OpacityEffectForm();
+            opacity.Show();
+            WarningMessageCard warning = new WarningMessageCard();
+            warning.header = "Bu Dosya silinecek";
+            warning.description = "Bu dosya kalıcı olarak silinecek, bu işlem geri alınamaz.";
+            warning.mode = "files";
+            warning.opacity = opacity;
+            warning.filecard = this;
+            warning.folderPath = filePath + "\\" + fileName;
+            warning.ShowDialog();
+            SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + "'" + Application.StartupPath + "\\Database1.mdf'" + ";Integrated Security=True");
+            string query = "INSERT INTO [Histories] (ProcessName,ProcessTime,ProcessPath,ProcessExtension,ProcessStatus) VALUES (@name,@time,@path,@extension,@status)";
+            using (SqlCommand command = new SqlCommand(query, sqlConnection))
+            {
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@name", fileName);
+                command.Parameters.AddWithValue("@time", DateTime.Now);
+                command.Parameters.AddWithValue("@path", filePath);
+                command.Parameters.AddWithValue("@extension", fileExt);
+                command.Parameters.AddWithValue("@status", "Dosya CAS ile silindi.");
+                sqlConnection.Open();
+                command.ExecuteNonQuery();
+                sqlConnection.Close();
+            }
         }
     }
 }
